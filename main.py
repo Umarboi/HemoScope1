@@ -5,7 +5,7 @@ import pickle
 from tensorflow.keras.models import load_model
 from joblib import load
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='C:\\Users\\UMAR\\Documents\\Model\\deployment')
 
 # Load the CNN model
 cnn_model = load_model('cnn_model.h5')
@@ -63,6 +63,7 @@ def detect():
 
             # Load and preprocess the image
             user_img = cv2.imread(image_path)
+            user_img = cv2.rotate(user_img, cv2.ROTATE_90_COUNTERCLOCKWISE)  # Rotate image by 90 degrees anticlockwise
             user_img_gray = cv2.cvtColor(user_img, cv2.COLOR_BGR2GRAY)  # Convert to grayscale
             user_img_resized = cv2.resize(user_img_gray, (100, 100))  # Resize image to match model input shape
             user_img_normalized = user_img_resized.astype('float32') / 255.0  # Normalize the image

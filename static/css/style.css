@@ -579,24 +579,55 @@ body {
     - #CHECK ANEMIA
 */
 
-.check-anemia {
-  padding: 50px 0;
+/* Style the file input field */
+#check form.p-3.text-center #file-input {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 15px;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
 }
 
-.blur-container {
-  position: relative;
-  background: rgba(208, 207, 223, 0.7); /* Semi-transparent background */
-  backdrop-filter: blur(5px); /* Blur effect applied to the background */
-  border-radius: 10px; /* Rounded corners for the container */
-  padding: 20px; /* Add padding to keep content away from the edges */
+/* Style the label for the file input field */
+#check form.p-3.text-center label.form-control {
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Center the form and result */
-.anemia-form, .anemia-result {
-  text-align: center;
+#check form.p-3.text-center label.form-control:hover {
+  background-color: #f9f9f9;
 }
 
+#check form.p-3.text-center label.form-control span {
+  display:block;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 30px;
+}
 
+.my-5 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+/* Add responsiveness to the file input field and label */
+@media (max-width: 576px) {
+  #check form.p-3.text-center #file-input,
+  #check form.p-3.text-center label.form-control {
+    max-width: 100%;
+  }
+}
 
 
 
